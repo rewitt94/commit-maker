@@ -15,12 +15,13 @@ function sh(cmd) {
 function handleSh(cmd) {
   return new Promise((resolve,reject) => {
     sh(cmd)
-      .then((stdout) => {
-        // for (let line of stdout.split('\n')) {
-          console.log(stdout)
-          console.log(typeof stdout)
-          console.log(`stdout: ${stdout}`);
-        // }
+      .then((response) => {
+        for (let line of response.stdout.split('\n')) {
+          console.log(`stdout: ${line}`);
+        }
+        for (let line of response.stderr.split('\n')) {
+          console.log(`stderr: ${line}`);
+        }
         resolve()
       })
       .catch((err) => {
