@@ -36,4 +36,5 @@ sh('git add .')
   //   console.log(`stdout: ${line}`);
   // }
     sh('git commit -m "Automatic commit"')
+  .catch((err) => console.log(err))
 })
