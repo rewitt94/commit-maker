@@ -28,7 +28,7 @@ function handleSh(cmd) {
     })
 }
 
-handleSh('echo "this is a new text file" > file.txt')
+handleSh('echo "this is a new text file" > second.txt')
  .then(() => handleSh('git add .'))
- .then(() => handleSh('git commit -m "Completely manual commit"'))
+ .then(() => handleSh('git commit -m "woooo"'))
  .then(() => handleSh('git push'))
