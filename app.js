@@ -17,6 +17,7 @@ function handleSh(cmd) {
     sh(cmd)
       .then((stdout) => {
         // for (let line of stdout.split('\n')) {
+          console.log(stdout)
           console.log(typeof stdout)
           console.log(`stdout: ${stdout}`);
         // }
