@@ -19,13 +19,21 @@ async function sh(cmd) {
 }
 
 async function runSh(cmd) {
-  let { stdout } = await sh(cmd);
-  for (let line of stdout.split('\n')) {
-    console.log(`stdout: ${line}`);
-  }
+  // let { stdout } = await sh(cmd);
+  //
+  // }
 }
 
-runSh('echo "this is a new file" > new.txt')
-runSh('git add .')
-runSh('git commit -m "Automatic commit"')
-runSh('git push')
+// runSh('echo "this is a new file" > new.txt')
+// runSh('git add .')
+// runSh('git commit -m "Automatic commit"')
+// runSh('git push')
+
+sh('git add .')
+  .then((stdout) => {
+    console.log(stdout)
+  // for (let line of stdout.split('\n')) {
+  //   console.log(`stdout: ${line}`);
+  // }
+    sh('git commit -m "Automatic commit"')
+})
