@@ -14,6 +14,7 @@ function sh(cmd) {
 
 function handleSh(cmd) {
   return new Promise((resolve,reject) => {
+    console.log(`command: ${cmd}`)
     sh(cmd)
       .then((response) => {
         for (let line of response.stdout.split('\n')) {
@@ -25,7 +26,7 @@ function handleSh(cmd) {
         resolve()
       })
       .catch((err) => {
-        console.log(err)
+        console.log(`err: ${err}`)
         reject()
       })
     })
