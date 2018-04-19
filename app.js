@@ -21,9 +21,11 @@ async function sh(cmd) {
 async function runSh(cmd) {
   let { stdout } = await sh(cmd);
   for (let line of stdout.split('\n')) {
-    console.log(`ls: ${line}`);
+    console.log(`stdout: ${line}`);
   }
 }
 
+runSh('echo "this is a new file" > new.txt')
 runSh('git add .')
 runSh('git commit -m "Automatic commit"')
+runSh('git push')
